@@ -7,14 +7,12 @@ function LocalGame() {
   const [turn, setTurn] = useState('X'); 
   const [prob, setProb] = useState({ xWin: 0, oWin: 0, draw: 0 });
 
-  // Update probabilities when board or turn changes
   useEffect(() => {
     const probResult = calculateProb(board, turn);
     setProb(probResult);
   }, [board, turn]);
 
   const handleClick = (index) => {
-    // If cell is already filled or game is over, ignore click
     if (board[index] || calculateWinner(board)) return;
 
     const newBoard = [...board];
