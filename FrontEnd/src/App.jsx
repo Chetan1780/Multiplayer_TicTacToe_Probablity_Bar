@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 import Board from './Components/Board';
 import Bar from './Components/Bar';
 
-const socket = io("http://localhost:3000"); 
+const socket = io(import.meta.env.VITE_API_BACKEND_URL); 
 
 function App() {
   const { roomId } = useParams(); 
