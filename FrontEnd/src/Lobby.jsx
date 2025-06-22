@@ -40,7 +40,7 @@ const Lobby = () => {
         </button>
       </div>
 
-      <p className="text-sm text-gray-500 mt-8">Created by You 🚀</p>
+      <p className="text-sm text-gray-500 mt-8">Created by Chetan 🚀</p>
     </div>
   );
 };
