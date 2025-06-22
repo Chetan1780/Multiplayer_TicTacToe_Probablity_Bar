@@ -6,13 +6,13 @@ const cors = require('cors');
 require('dotenv').config();
 app.use(cors({
     origin: process.env.FRONTEND_URL,
-    credentials:true
-}));
-
-const server = http.createServer(app);
-const io = new Server(server,{
+  }));
+  
+  const server = http.createServer(app);
+  const io = new Server(server,{
     cors:{
-        origin: "*"
+      // origin: "*"
+        origin: process.env.FRONTEND_URL,
     }
 })
 let rooms = {}
