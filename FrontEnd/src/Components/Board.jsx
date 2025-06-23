@@ -1,7 +1,7 @@
 function Square({ value, onClick }) {
     return (
       <button
-        className="w-20 h-20 text-3xl font-bold rounded-xl bg-white shadow-md border border-gray-300 hover:bg-gray-100 transition-all duration-200"
+        className="w-20 h-20 cursor-pointer  text-3xl font-bold rounded-xl bg-white shadow-md border border-gray-300 hover:bg-gray-100 transition-all duration-200"
         onClick={onClick}
       >
         {value}

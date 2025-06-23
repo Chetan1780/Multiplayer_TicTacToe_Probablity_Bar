@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import Board from './Components/Board';
 import Bar from './Components/Bar';
+import ShareLink from './Components/ShareLink';
 
 const socket = io(import.meta.env.VITE_API_BACKEND_URL); 
 
@@ -87,6 +88,7 @@ function App() {
     });
     return outcomes;
   }
+  
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-800 p-4">
@@ -95,14 +97,14 @@ function App() {
       {playerCount < 2 && <p className="text-sm text-gray-500 italic mb-2">Waiting for an opponent to join...</p>}
       <Board board={board} onClick={handleClick} />
       <button
-        className='mt-6 p-2 transition-all hover:scale-105 duration-200 bg-blue-400 rounded-xl outline-none hover:bg-blue-500 hover:text-white'
+        className='mt-6 p-2 transition-all hover:scale-105 duration-200 bg-blue-400 rounded-xl outline-none hover:bg-blue-500 text-white'
         onClick={handleReset}
       >
         Reset
       </button>
       <Bar prob={prob} />
-      <p className="text-xs mt-4 text-gray-500">Share this link to play: <code>{window.location.href}</code></p>
-    </div>
+      <ShareLink/>  
+      </div>
   );
 }
 
